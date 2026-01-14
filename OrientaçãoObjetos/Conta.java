@@ -72,26 +72,54 @@ public class Conta {
 	
 	  
       public static void main(String[] args) {
-	
-       ContaPoupança conta1 = new ContaPoupança();
+	   Scanner entrada = new Scanner(System.in);
+       
+	 
+	   ContaPoupança conta1 = new ContaPoupança();
        
        conta1.adicionarNumero();
 	   conta1.adicionarAgencia();
        conta1.digitarNome();
-       conta1.fazerDeposito(50.0);
-      conta1.fazerSaque(30.0);
+       
+	   System.out.println("Digite o valor do depósito:  ");
+       double valorDeposito = entrada.nextDouble();
+       conta1.fazerDeposito(valorDeposito);
+
+	   System.out.println("Digite o valor do saque:    ");
+	   double valorSaque = entrada.nextDouble();
+	   conta1.fazerSaque(valorSaque);
+
        conta1.mostrarSaldo();
-       
-       
+
+
        ContaCorrente conta2 = new ContaCorrente();
-  
-       
        conta2.adicionarNumero();
        conta2.adicionarAgencia();
        conta2.digitarNome();
-        conta2.fazerTransferencia(conta1, 30.0);
-       conta1.mostrarSaldo();
-       conta2.mostrarSaldo();
+        
+	   System.out.println("Digite o valor da Transferência:  ");
+	   double valorTransferencia = entrada.nextDouble();
+	   conta2.fazerTransferencia(conta1, valorTransferencia);
+	 
+	 
+	   conta1.mostrarSaldo();
+	   conta2.mostrarSaldo();
+
+
+
+
+	   
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	   entrada.close();
       
   
   
